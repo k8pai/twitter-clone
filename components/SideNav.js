@@ -8,126 +8,179 @@ import { FaBell, FaUserAlt, FaFeatherAlt, FaHashtag } from 'react-icons/fa';
 import { MdOutlineMoreHoriz } from 'react-icons/md';
 import { SiTwitter } from 'react-icons/si';
 import { RiHome7Fill } from 'react-icons/ri';
+import Link from 'next/link';
 
 const SideNav = () => {
 	return (
-		<div className="h-screen sticky top-0 xl:max-w-[250px] xl:w-full box-border p-2">
+		<div className="h-screen sticky top-0 xl:max-w-[250px] xl:w-full box-border p-px pr-2 bg-[#121212]">
 			<ul className="h-full w-full flex flex-col space-y-2 justify-evenly">
-				<div className="logo rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212]">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<SiTwitter />
-					</IconContext.Provider>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<RiHome7Fill />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						home
-					</span>
-				</div>
-				<div className="rounded-full hidden p-3 w-fit cursor-pointer hover:bg-[#121212] xl:flex xl:items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<FaHashtag />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						explore
-					</span>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:hidden xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<BsSearch />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						search
-					</span>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<FaBell />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						notifications
-					</span>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<CiMail />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						messages
-					</span>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<BsBookmark />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						bookmarks
-					</span>
-				</div>
-
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<FaUserAlt />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						profile
-					</span>
-				</div>
-				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:pr-6">
-					<IconContext.Provider
-						value={{
-							size: '1.75em',
-							className: 'global-class-name',
-						}}
-					>
-						<CgMoreO />
-					</IconContext.Provider>
-					<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
-						more
-					</span>
-				</div>
+				<Link
+					className={
+						' rounded-full p-3 w-fit cursor-pointer hover:bg-zinc-700/40'
+					}
+					href="/"
+				>
+					<div className="logo">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<SiTwitter />
+						</IconContext.Provider>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<RiHome7Fill />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							home
+						</span>
+					</div>
+				</Link>
+				<Link className={'cursor-default'} href={'/explore'}>
+					<div className="rounded-full hidden p-3 w-fit cursor-pointer hover:bg-[#121212] xl:flex xl:items-center xl:pr-6">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<FaHashtag />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							explore
+						</span>
+					</div>
+				</Link>
+				<Link className={'cursor-default'} href={'/search'}>
+					<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:hidden xl:pr-6">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<BsSearch />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							search
+						</span>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/notifications'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<FaBell />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							notifications
+						</span>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/messages'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<CiMail />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							messages
+						</span>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/bookmarks'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<BsBookmark />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							bookmarks
+						</span>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/profile'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<FaUserAlt />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							profile
+						</span>
+					</div>
+				</Link>
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/more'}
+				>
+					<div className=" flex items-center">
+						<IconContext.Provider
+							value={{
+								size: '1.75em',
+								className: 'global-class-name',
+							}}
+						>
+							<CgMoreO />
+						</IconContext.Provider>
+						<span className="ml-3 hidden text-lg font-semibold xl:block capitalize">
+							more
+						</span>
+					</div>
+				</Link>
 				<div className="rounded-full p-3 w-fit cursor-pointer hover:bg-[#121212] flex items-center xl:hidden">
 					<IconContext.Provider
 						value={{

@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
 			</Head>
 			<div className="max-w-7xl w-full mx-auto flex justify-start bg-[#181818]">
 				<SideNav />
-				{children}
+				<div className="w-full p-px">{children}</div>
 				<SuggestionNav />
 			</div>
 		</div>
