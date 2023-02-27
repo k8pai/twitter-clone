@@ -7,8 +7,8 @@ const Layout = ({ children }) => {
 	return (
 		<div className="w-full min-h-screen h-full bg-[#121212] text-[#b3b3b3]">
 			<Head>
-				<meta charset="UTF-8" />
-				<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+				<meta charSet="UTF-8" />
+				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0"

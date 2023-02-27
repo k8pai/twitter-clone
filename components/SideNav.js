@@ -51,8 +51,13 @@ const SideNav = () => {
 						</span>
 					</div>
 				</Link>
-				<Link className={'cursor-default'} href={'/explore'}>
-					<div className="rounded-full hidden p-3 w-fit cursor-pointer hover:bg-[#121212] xl:flex xl:items-center xl:pr-6">
+				<Link
+					className={
+						'rounded-full p-3 w-fit hover:bg-zinc-700/40 xl:pr-6'
+					}
+					href={'/explore'}
+				>
+					<div className="flex items-center">
 						<IconContext.Provider
 							value={{
 								size: '1.75em',
